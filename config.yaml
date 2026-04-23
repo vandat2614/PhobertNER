@@ -16,7 +16,7 @@ MODEL:
 
 DATA:
   TRAIN_PATH: "data/train.jsonl"
-  VAL_PATH: "data/val.jsonl"
+  VAL_PATH: "data/validation.jsonl"
   TEST_PATH: "data/test.jsonl"
 
   LABELS_PATH: "data/labels.json"
