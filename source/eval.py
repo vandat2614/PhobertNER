@@ -96,10 +96,12 @@ def _compute_per_class_stats(preds, labels, index_to_label):
 
 
 def _build_classification_report(preds, labels, index_to_label):
+    label_ids = sorted(index_to_label.keys())
     return classification_report(
         labels,
         preds,
-        target_names=[index_to_label[i] for i in sorted(index_to_label.keys())],
+        labels=label_ids,   # 👈 fix chính ở đây
+        target_names=[index_to_label[i] for i in label_ids],
         zero_division=0
     )
 
