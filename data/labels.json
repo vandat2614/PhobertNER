@@ -1,0 +1,33 @@
+{
+    "O": 0,
+
+    "B-PATIENT_ID": 1,
+    "I-PATIENT_ID": 2,
+
+    "B-NAME": 3,
+    "I-NAME": 4,
+
+    "B-AGE": 5,
+    "I-AGE": 6,
+
+    "B-GENDER": 7,
+    "I-GENDER": 8,
+
+    "B-LOCATION": 9,
+    "I-LOCATION": 10,
+
+    "B-ORGANIZATION": 11,
+    "I-ORGANIZATION": 12,
+
+    "B-SYMPTOM_AND_DISEASE": 13,
+    "I-SYMPTOM_AND_DISEASE": 14,
+
+    "B-TRANSPORTATION": 15,
+    "I-TRANSPORTATION": 16,
+
+    "B-DATE": 17,
+    "I-DATE": 18,
+
+    "B-JOB": 19,
+    "I-JOB": 20
+}

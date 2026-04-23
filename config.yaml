@@ -1,0 +1,33 @@
+WORKERS: 4
+
+MODEL:
+  NAME: "phobert_ner"
+  PRETRAINED_NAME: "vinai/phobert-base-v2"
+  HIDDEN_DIM: 768
+  DROPOUT: 0.1
+  
+  # Fine-tuning strategy
+  FREEZE_BERT: true
+  UNFREEZE_LAST_N_LAYERS: 2
+
+  CLASSIFIER:
+    NUM_LAYERS: 2
+    HIDDEN_DIM: 256
+
+DATA:
+  TRAIN_PATH: "data/train.jsonl"
+  VAL_PATH: "data/val.jsonl"
+  TEST_PATH: "data/test.jsonl"
+
+  LABELS_PATH: "data/labels.json"
+
+  BATCH_SIZE: 64
+  MAX_SEQ_LEN: 196
+
+TRAIN:
+  LR: 1e-3
+  MAX_EPOCHS: 30
+
+  OPTIMIZER: "adamw"
+
+  CHECKPOINT_DIR: "checkpoints"
