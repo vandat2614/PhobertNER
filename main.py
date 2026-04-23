@@ -7,8 +7,8 @@ from transformers import AutoTokenizer
 
 from source.model import NerModel
 from source.data_loader import create_data_loader
-from source.trainer import train
-
+from source.trainer import train, plot_history
+from source.eval import run_eval
 
 def load_config(path):
     with open(path, "r") as f:
@@ -75,13 +75,13 @@ def run_train(config):
     )
 
 
+
 def main():
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
         "--mode",
         type=str,
-        required=True,
         help="Mode to run: train / eval / infer (extend later)",
         default='train'
     )
@@ -89,17 +89,35 @@ def main():
     parser.add_argument(
         "--config_path",
         type=str,
-        required=True,
         help="Path to config yaml",
         default='config.yaml'
+    )
+
+    parser.add_argument(
+        "--plot",
+        action="store_true",
+        help="Plot training curves from history.json"
     )
 
     args = parser.parse_args()
 
     config = load_config(args.config_path)
 
-    if args.mode == "train":
+    if args.plot:
+        plot_history(config)
+
+    elif args.mode == "train":
         run_train(config)
+
+    elif args.mode == "eval":
+        if args.model_path is None or args.data_path is None:
+            raise ValueError("eval mode requires --model_path and --data_path")
+
+        run_eval(
+            config,
+            model_path=args.model_path,
+            data_path=args.data_path
+        )
 
     else:
         raise ValueError(f"Unsupported mode: {args.mode}")

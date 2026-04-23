@@ -3,6 +3,7 @@ import json
 import torch
 import torch.nn as nn
 from sklearn.metrics import f1_score
+import matplotlib.pyplot as plt
 
 
 def compute_f1(preds, labels, ignore_index=-100):
@@ -178,3 +179,40 @@ def train(
             )
 
     print("\nTraining finished.")
+
+
+def plot_history(config):
+    history_path = os.path.join(
+        config["TRAIN"]["CHECKPOINT_DIR"],
+        "history.json"
+    )
+
+    if not os.path.exists(history_path):
+        raise FileNotFoundError(f"Not found: {history_path}")
+
+    with open(history_path, "r") as f:
+        history = json.load(f)
+
+    epochs = range(1, len(history["train_loss"]) + 1)
+
+    # Loss
+    plt.figure()
+    plt.plot(epochs, history["train_loss"], label="train_loss")
+    plt.plot(epochs, history["val_loss"], label="val_loss")
+    plt.xlabel("Epoch")
+    plt.ylabel("Loss")
+    plt.title("Loss Curve")
+    plt.legend()
+    plt.grid()
+    plt.savefig(os.path.join(config["TRAIN"]["CHECKPOINT_DIR"], "loss.png"))
+
+    # F1
+    plt.figure()
+    plt.plot(epochs, history["train_f1"], label="train_f1")
+    plt.plot(epochs, history["val_f1"], label="val_f1")
+    plt.xlabel("Epoch")
+    plt.ylabel("F1 Score")
+    plt.title("F1 Curve")
+    plt.legend()
+    plt.grid()
+    plt.savefig(os.path.join(config["TRAIN"]["CHECKPOINT_DIR"], "f1.png"))
