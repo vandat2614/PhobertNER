@@ -1,0 +1,27 @@
+                       precision    recall  f1-score   support
+
+                    O       0.99      0.99      0.99     42166
+         B-PATIENT_ID       0.98      0.99      0.98      1276
+         I-PATIENT_ID       0.67      0.29      0.40         7
+               B-NAME       0.97      0.97      0.97       188
+               I-NAME       0.67      0.40      0.50         5
+                B-AGE       0.97      0.99      0.98       361
+                I-AGE       0.00      0.00      0.00         0
+             B-GENDER       0.96      0.98      0.97       277
+             I-GENDER       0.00      0.00      0.00         0
+           B-LOCATION       0.96      0.95      0.96      2737
+           I-LOCATION       0.94      0.96      0.95      2993
+       B-ORGANIZATION       0.92      0.90      0.91       551
+       I-ORGANIZATION       0.89      0.94      0.91      1455
+B-SYMPTOM_AND_DISEASE       0.92      0.91      0.91       766
+I-SYMPTOM_AND_DISEASE       0.95      0.81      0.87       987
+     B-TRANSPORTATION       0.98      1.00      0.99        87
+     I-TRANSPORTATION       0.89      1.00      0.94        25
+               B-DATE       0.98      0.99      0.99      1103
+               I-DATE       0.98      0.99      0.99      1118
+                B-JOB       0.89      0.80      0.84       132
+                I-JOB       0.79      0.55      0.65        49
+
+             accuracy                           0.98     56283
+            macro avg       0.82      0.78      0.80     56283
+         weighted avg       0.98      0.98      0.98     56283

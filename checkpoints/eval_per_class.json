@@ -1,0 +1,107 @@
+{
+  "O": {
+    "accuracy": 99.11,
+    "correct_samples": 41790,
+    "total_samples": 42166
+  },
+  "B-PATIENT_ID": {
+    "accuracy": 98.82,
+    "correct_samples": 1261,
+    "total_samples": 1276
+  },
+  "I-PATIENT_ID": {
+    "accuracy": 28.57,
+    "correct_samples": 2,
+    "total_samples": 7
+  },
+  "B-NAME": {
+    "accuracy": 96.81,
+    "correct_samples": 182,
+    "total_samples": 188
+  },
+  "I-NAME": {
+    "accuracy": 40.0,
+    "correct_samples": 2,
+    "total_samples": 5
+  },
+  "B-AGE": {
+    "accuracy": 98.89,
+    "correct_samples": 357,
+    "total_samples": 361
+  },
+  "I-AGE": {
+    "accuracy": 0.0,
+    "correct_samples": 0,
+    "total_samples": 0
+  },
+  "B-GENDER": {
+    "accuracy": 97.83,
+    "correct_samples": 271,
+    "total_samples": 277
+  },
+  "I-GENDER": {
+    "accuracy": 0.0,
+    "correct_samples": 0,
+    "total_samples": 0
+  },
+  "B-LOCATION": {
+    "accuracy": 95.25,
+    "correct_samples": 2607,
+    "total_samples": 2737
+  },
+  "I-LOCATION": {
+    "accuracy": 95.76,
+    "correct_samples": 2866,
+    "total_samples": 2993
+  },
+  "B-ORGANIZATION": {
+    "accuracy": 90.38,
+    "correct_samples": 498,
+    "total_samples": 551
+  },
+  "I-ORGANIZATION": {
+    "accuracy": 94.16,
+    "correct_samples": 1370,
+    "total_samples": 1455
+  },
+  "B-SYMPTOM_AND_DISEASE": {
+    "accuracy": 91.25,
+    "correct_samples": 699,
+    "total_samples": 766
+  },
+  "I-SYMPTOM_AND_DISEASE": {
+    "accuracy": 80.95,
+    "correct_samples": 799,
+    "total_samples": 987
+  },
+  "B-TRANSPORTATION": {
+    "accuracy": 100.0,
+    "correct_samples": 87,
+    "total_samples": 87
+  },
+  "I-TRANSPORTATION": {
+    "accuracy": 100.0,
+    "correct_samples": 25,
+    "total_samples": 25
+  },
+  "B-DATE": {
+    "accuracy": 99.37,
+    "correct_samples": 1096,
+    "total_samples": 1103
+  },
+  "I-DATE": {
+    "accuracy": 99.37,
+    "correct_samples": 1111,
+    "total_samples": 1118
+  },
+  "B-JOB": {
+    "accuracy": 79.55,
+    "correct_samples": 105,
+    "total_samples": 132
+  },
+  "I-JOB": {
+    "accuracy": 55.1,
+    "correct_samples": 27,
+    "total_samples": 49
+  }
+}
