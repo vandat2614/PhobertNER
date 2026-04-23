@@ -61,7 +61,7 @@ def run_train(config):
     # optimizer
     optimizer = torch.optim.AdamW(
         model.parameters(),
-        lr=config["TRAIN"]["LR"]
+        lr=float(config["TRAIN"]["LR"])
     )
 
     # train
