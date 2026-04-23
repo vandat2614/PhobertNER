@@ -8,7 +8,7 @@ MODEL:
   
   # Fine-tuning strategy
   FREEZE_BERT: true
-  UNFREEZE_LAST_N_LAYERS: 2
+  UNFREEZE_LAST_N_LAYERS: 1
 
   CLASSIFIER:
     NUM_LAYERS: 2
@@ -26,7 +26,7 @@ DATA:
 
 TRAIN:
   LR: 1e-3
-  MAX_EPOCHS: 30
+  MAX_EPOCHS: 15
 
   OPTIMIZER: "adamw"
 
