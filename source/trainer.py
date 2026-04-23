@@ -158,10 +158,7 @@ def train(
             },
             os.path.join(
                 save_dir,
-                config["TRAIN"]["EPOCH_MODEL_NAME"].format(
-                    epoch=epoch,
-                    f1=val_f1
-                )
+                f'epoch_{epoch}.pt'
             )
         )
 
@@ -176,9 +173,7 @@ def train(
                 },
                 os.path.join(
                     save_dir,
-                    config["TRAIN"]["BEST_MODEL_NAME"].format(
-                        f1=val_f1
-                    )
+                    f'best.pt'
                 )
             )
 
