@@ -10,6 +10,7 @@ from source.data_loader import create_data_loader
 from source.trainer import train, plot_history
 from source.eval import run_eval
 
+
 def load_config(path):
     with open(path, "r") as f:
         return yaml.safe_load(f)
@@ -22,7 +23,7 @@ def load_labels(path):
 
 def run_train(config):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    print(f'Run on {device}')
+    print(f"Run on {device}")
 
     # tokenizer
     tokenizer = AutoTokenizer.from_pretrained(
@@ -75,22 +76,21 @@ def run_train(config):
     )
 
 
-
 def main():
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
         "--mode",
         type=str,
-        help="Mode to run: train / eval / infer (extend later)",
-        default='train'
+        default="train",
+        help="Mode to run: train / eval / (extend later)"
     )
 
     parser.add_argument(
         "--config_path",
         type=str,
-        help="Path to config yaml",
-        default='config.yaml'
+        default="config.yaml",
+        help="Path to config yaml"
     )
 
     parser.add_argument(
@@ -99,19 +99,36 @@ def main():
         help="Plot training curves from history.json"
     )
 
+    parser.add_argument(
+        "--model_path",
+        type=str,
+        default=None,
+        help="Path to pretrained checkpoint (.pt)"
+    )
+
+    parser.add_argument(
+        "--data_path",
+        type=str,
+        default=None,
+        help="Path to dataset (jsonl) for eval"
+    )
+
     args = parser.parse_args()
 
     config = load_config(args.config_path)
 
     if args.plot:
         plot_history(config)
+        return
 
-    elif args.mode == "train":
+    if args.mode == "train":
         run_train(config)
 
     elif args.mode == "eval":
         if args.model_path is None or args.data_path is None:
-            raise ValueError("eval mode requires --model_path and --data_path")
+            raise ValueError(
+                "eval mode requires --model_path and --data_path"
+            )
 
         run_eval(
             config,
